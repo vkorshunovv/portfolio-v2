@@ -40,7 +40,7 @@ p {
 
 /* -----------> */
 
-.canvas-aura {
+.canvas-aura.aura-wrapper.aura-wrapper {
     width: 100vw;
     height: 100vh;
     position: absolute;
@@ -55,12 +55,12 @@ p {
 }
 
 @media (min-width: 768px) {
-    .canvas-aura {
+    .canvas-aura.aura-wrapper.aura-wrapper {
         display: block;
     }
 }
 
-.mask {
+.canvas-aura.aura-wrapper .mask.aura-wrapper {
     position: absolute;
     z-index: var(--zindex-2);
     background: var(--color-gradient);
@@ -70,7 +70,7 @@ p {
     height: 100%;
 }
 
-.canvas-holder {
+.canvas-holder.aura-wrapper.aura-wrapper {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -87,6 +87,17 @@ p {
     top: 0;
     z-index: var(--zindex-base);
     opacity: var(--canvas-opacity);
+
+
+    background: linear-gradient(45deg,
+     var(--app-color-blue100) 0%,
+     var(--app-color-blue300) 15%,
+     var(--app-color-blue500) 30%,
+     var(--app-color-indigo200) 45%,
+     var(--app-color-yellow300) 60%,
+     var(--app-color-yellow500) 75%,
+     var(--app-color-green500) 90%,
+     var(--app-color-green800) 100%);
 }
 
 .main {
@@ -225,11 +236,10 @@ p.center.under-header {
 
 .cards {
     padding: 0 calc(var(--24px) + 6px) calc(var(--64px) * 2);
-    
+
 }
 
 .cards.cards-container {
-    margin-top: var(--spacing-l);
     margin-top: 10vh
 }
 
@@ -280,7 +290,7 @@ p.center.under-header {
     --grid-column-end: 26;
 }
 
-.card.card-wrapper {
+.card.card-wrapper.card-wrapper {
     --_background: var(--background, var(--color-red));
     --_color: var(--color, var(--color-beige));
     --_grid-column-start: var(--grid-column-start, 1);
@@ -301,12 +311,26 @@ p.center.under-header {
 }
 
 @media (min-width: 992px) {
-    .card.card-wrapper {
+    .card.card-wrapper.card-wrapper {
         max-height: 550px;
         border-radius: var(--64px);
         grid-column-start: var(--_grid-column-start);
         grid-column-end: var(--_grid-column-end);
     }
+}
+
+@media (min-width: 544px) {
+    .card.card-wrapper.card-wrapper:hover {
+        transform: translate3d(0, -3px, 0);
+        box-shadow: var(--shadow-lg);
+        filter: saturate(1.2);
+    }
+}
+
+.card.card-wrapper.card-wrapper:hover  .inner{
+    transform: translate3d(0, 15px, 0);
+    box-shadow: var(--shadow-lg);
+    
 }
 
 .card-flourish.card-wrapper {
@@ -370,7 +394,7 @@ span.card-wrapper.card-wrapper {
     margin-top: var(--42px);
 }
 
-.image-holder.image-wrapper{
+.image-holder.image-wrapper {
     margin: 0 auto;
     width: 100%;
     max-width: 1300px;

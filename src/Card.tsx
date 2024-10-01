@@ -1,7 +1,17 @@
 import "./App.css";
 import star from "./assets/star.png";
 
-const Card = ({ id, img }: { id: number; img: string }) => {
+const Card = ({
+  id,
+  img,
+  title,
+  subtitle,
+}: {
+  id: number;
+  img: string;
+  title: string;
+  subtitle: string;
+}) => {
   return (
     <div className={`card-container${id}`}>
       <a href="#" className="card card-wrapper">
@@ -15,8 +25,8 @@ const Card = ({ id, img }: { id: number; img: string }) => {
         </div>
         <div className="card-wrap card-wrapper">
           <div className="info card-wrapper">
-            <span className="card-wrapper">Help Scout</span>
-            <h2>AI</h2>
+            <span className="card-wrapper">{subtitle}</span>
+            <h2>{title}</h2>
           </div>
           <div className="inner card-wrapper">
             <div className="image-holder docs image-wrapper">
@@ -28,7 +38,7 @@ const Card = ({ id, img }: { id: number; img: string }) => {
                   height={422}
                   loading="lazy"
                   className="figure skip loaded"
-                  style={{ borderRadius: "15px" }}
+                  style={{ borderRadius: "1rem" }}
                 />
               </figure>
             </div>
