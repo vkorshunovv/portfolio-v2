@@ -21,9 +21,16 @@ h1 {
   }
 }
 
-img, picture {
-    max-width: 100%;
-    display: block;
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+p {
+    font-size: var(--font-body);
+    line-height: 160%;
+    color: var(--color-text-secondary);
 }
 
 /* -----------> */
@@ -135,48 +142,78 @@ span.section {
 }
 
 .holder-content.section {
-    position: relative;
+  position: relative;
 }
 
 .stars.section {
-    position: absolute;
-    transform: scale(.5);
+  position: absolute;
+  transform: scale(0.5);
 }
 
 @media (min-width: 768px) {
-    .stars.section {
-        transform: scale(1);
-    }
+  .stars.section {
+    transform: scale(1);
+  }
 }
 
 .stars.right.section {
-    right: -5.5rem;
-    top: -2rem;
+  right: -5.5rem;
+  top: -2rem;
 }
 
 .stars.left.section {
-    left: -8rem;
-    bottom: -.5rem;
+  left: -8rem;
+  bottom: -0.5rem;
 }
 
 .figure {
-position: relative;
+  position: relative;
 }
 
 img.star {
-    opacity: 0;
-    transition: all .2s ease-in-out;
-    max-width: inherit;
-    position: relative;
-    z-index: var(--zindex-content);
-    --_shadow: var(--shadow, none);
-    --_radius: var(--radius, 0);
-    box-shadow: var(--_shadow);
-    border-radius: var(--_radius);
-    --_margin: var(--margin, 0);
-    margin: var(--_margin);
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  max-width: inherit;
+  position: relative;
+  z-index: var(--zindex-content);
+  --_shadow: var(--shadow, none);
+  --_radius: var(--radius, 0);
+  box-shadow: var(--_shadow);
+  border-radius: var(--_radius);
+  --_margin: var(--margin, 0);
+  margin: var(--_margin);
 }
 
-img.loaded.star, img.skip.star {
-    opacity: 1;
+img.loaded.star,
+img.skip.star {
+  opacity: 1;
+}
+
+.wrapper.under-header{
+    padding: 0 var(--24px);
+    display: grid;
+    grid-template-columns: 1fr min(65ch, 100%) 1fr;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .wrapper.under-header {
+        padding: 0 var(--16px);
+    }
+}
+
+p.under-header {
+    font-size: var(--font-body);
+    --_color: var(--color, var(--color-text-secondary));
+    color: var(--_color);
+    letter-spacing: -.3px;
+}
+
+.wrapper.under-header>.under-header {
+    grid-column: 2;
+}
+
+p.center.under-header {
+    text-align: center;
+    font-weight: 500;
 }

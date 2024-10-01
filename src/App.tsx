@@ -17,7 +17,7 @@ function App() {
               <span className="header-span">
                 <span className="holder section">
                   <span className="holder-content section">
-                    Hi, I'm Viktor.{" "}
+                    Hi, I'm Viktor.
                     <span className="stars right section">
                       <figure className="figure">
                         <img
@@ -51,8 +51,15 @@ function App() {
                 </span>
               </span>
             </h1>
-            <div></div>
-            <div></div>
+            <div className="wrapper under-header">
+              <p className="under-header center">
+                <span>
+                  I'm passionate about crafting experiences that are engaging,
+                  accessible, and user-centric.
+                </span>
+              </p>
+            </div>
+            <div className="cards content-main"></div>
           </div>
         </main>
       </div>
