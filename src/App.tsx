@@ -1,5 +1,10 @@
 import "./App.css";
 import star from "./assets/star.png";
+import Card from "./Card";
+import starland from "./assets/star_land.png";
+import guauleria from "./assets/guauleria_landing.png";
+import trail_guardians from "./assets/trail-guardians.png";
+import portfolio from "./assets/portfolio_light.png";
 
 function App() {
   return (
@@ -26,7 +31,7 @@ function App() {
                           width={66}
                           height={66}
                           loading="lazy"
-                          className="star skip loaded"
+                          className="figure skip loaded"
                         />
                       </figure>
                     </span>
@@ -43,7 +48,7 @@ function App() {
                           width={68}
                           height={68}
                           loading="lazy"
-                          className="star skip loaded"
+                          className="figure skip loaded"
                         />
                       </figure>
                     </span>
@@ -59,7 +64,15 @@ function App() {
                 </span>
               </p>
             </div>
-            <div className="cards content-main"></div>
+            <div className="cards cards-container">
+              <div className="cards-content">
+                <Card id={1} img={starland} />
+                <Card id={2} img={guauleria} />
+                <Card id={3} img={trail_guardians} />
+                <Card id={4} img={portfolio} />
+                
+              </div>
+            </div>
           </div>
         </main>
       </div>
