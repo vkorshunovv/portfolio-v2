@@ -40,6 +40,10 @@ p {
 
 /* -----------> */
 
+#canvas-aura  {
+    display: block;
+}
+
 .canvas-aura.aura-wrapper.aura-wrapper {
     width: 100vw;
     height: 100vh;
@@ -54,11 +58,11 @@ p {
     opacity: 0.5;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
     .canvas-aura.aura-wrapper.aura-wrapper {
         display: block;
     }
-}
+} */
 
 .canvas-aura.aura-wrapper .mask.aura-wrapper {
     position: absolute;
@@ -115,13 +119,13 @@ p {
 }
 
 h1.header-main {
-    padding: 8rem 0 3rem;
+    padding: 6rem 0 3rem;
     position: relative;
 }
 
 @media (min-width: 768px) {
     h1.header-main {
-        padding: 12rem 0 3rem;
+        padding: 8rem 0 3rem;
     }
 }
 

@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <div>
-        <div className="canvas-aura aura-wrapper">
+        <div id="canvas-aura" className="canvas-aura aura-wrapper" >
           <div className="mask aura-wrapper"></div>
           <div className="canvas-holder aura-wrapper">
             <canvas width={2000} height={2000} className="canvas" />
