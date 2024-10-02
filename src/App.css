@@ -262,7 +262,7 @@ p.center.under-header {
     }
 }
 
-.card-container1 {
+#card-container1 {
     display: contents;
     --background: var(--color-pink);
     --color: var(--color-text-bold);
@@ -270,7 +270,7 @@ p.center.under-header {
     --grid-column-end: 10;
 }
 
-.card-container2 {
+#card-container2 {
     display: contents;
     --background: var(--color-mint);
     --color: var(--color-text-bold);
@@ -278,7 +278,7 @@ p.center.under-header {
     --grid-column-end: 26;
 }
 
-.card-container3 {
+#card-container3 {
     display: contents;
     --background: var(--color-rust);
     --color: var(--color-text-bold);
@@ -286,12 +286,36 @@ p.center.under-header {
     --grid-column-end: 16;
 }
 
-.card-container4 {
+#card-container4 {
     display: contents;
     --background: var(--color-babyblue);
     --color: var(--color-text-bold);
     --grid-column-start: 17;
     --grid-column-end: 26;
+}
+
+#card-container5 {
+    display: contents;
+    --background: var(--color-pink);
+    --color: var(--color-text-bold);
+    --grid-column-start: 1;
+    --grid-column-end: 10;
+}
+
+#card-container6 {
+    display: contents;
+    --background: var(--color-mint);
+    --color: var(--color-text-bold);
+    --grid-column-start: 11;
+    --grid-column-end: 26;
+}
+
+#card-container7 {
+    display: contents;
+    --background: var(--color-rust);
+    --color: var(--color-text-bold);
+    --grid-column-start: 1;
+    --grid-column-end: 16;
 }
 
 .card.card-wrapper.card-wrapper {
@@ -337,7 +361,7 @@ p.center.under-header {
 
 }
 
-.card-flourish.card-wrapper {
+.card-flourish.card-wrapper.card-wrapper {
     position: absolute;
     left: 0;
     top: 0;
