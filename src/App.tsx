@@ -8,12 +8,13 @@ import portfolio from "./assets/portfolio_light.png";
 import guauleria_v1 from "./assets/guauleria_v1.png";
 import pulse_care from "./assets/health_app.png";
 import little_lemon from "./assets/little_lemon_light.png";
+import Footer from "./Footer";
 
 function App() {
   return (
     <>
       <div>
-        <div id="canvas-aura" className="canvas-aura aura-wrapper" >
+        <div id="canvas-aura" className="canvas-aura aura-wrapper">
           <div className="mask aura-wrapper"></div>
           <div className="canvas-holder aura-wrapper">
             <canvas width={2000} height={2000} className="canvas" />
@@ -115,6 +116,7 @@ function App() {
             </div>
           </div>
         </main>
+        <Footer />
       </div>
     </>
   );
