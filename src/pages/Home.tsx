@@ -3,9 +3,37 @@ import star from "../assets/star.png";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
 import { projectsData } from "../constants/data";
+import { useEffect, useState } from "react";
 
 const Home = () => {
+  const [isStarsLoaded, setIsStarsLoaded] = useState(false);
+  const [isHeaderLoaded, setIsHeaderLoaded] = useState(false);
+  const [isSubHeaderLoaded, setIsSubHeaderLoaded] = useState(false);
+  const [isCardsLoaded, setIsCardsLoaded] = useState(false);
+
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const sId = setTimeout(() => {
+      setIsHeaderLoaded(true);
+    }, 400);
+    const hId = setTimeout(() => {
+      setIsSubHeaderLoaded(true);
+    }, 600);
+    const shId = setTimeout(() => {
+      setIsCardsLoaded(true);
+    }, 700);
+    const cId = setTimeout(() => {
+      setIsStarsLoaded(true);
+    }, 1100);
+
+    return () => {
+      clearTimeout(sId);
+      clearTimeout(hId);
+      clearTimeout(shId);
+      clearTimeout(cId);
+    };
+  }, []);
 
   function handleClick(slug: string) {
     navigate(`/projects/${slug}`);
@@ -21,7 +49,7 @@ const Home = () => {
         </div>
         <main className="main">
           <div className="content">
-            <h1 className="header-main">
+            <h1 className={`${isHeaderLoaded && "h-loaded"} header-main`}>
               <span className="header-span">
                 <span className="holder section">
                   <span className="holder-content section">
@@ -34,7 +62,7 @@ const Home = () => {
                           width={66}
                           height={66}
                           loading="lazy"
-                          className="figure skip loaded"
+                          className={`${isStarsLoaded && "skip loaded"} figure`}
                         />
                       </figure>
                     </span>
@@ -51,7 +79,7 @@ const Home = () => {
                           width={68}
                           height={68}
                           loading="lazy"
-                          className="figure skip loaded"
+                          className={`${isStarsLoaded && "skip loaded"} figure`}
                         />
                       </figure>
                     </span>
@@ -59,7 +87,11 @@ const Home = () => {
                 </span>
               </span>
             </h1>
-            <div className="wrapper under-header">
+            <div
+              className={`${
+                isSubHeaderLoaded && "sub-h-loaded"
+              } wrapper under-header`}
+            >
               <p className="under-header center">
                 <span>
                   I'm passionate about crafting experiences that are engaging,
@@ -68,7 +100,7 @@ const Home = () => {
               </p>
             </div>
             <div className="cards cards-container">
-              <div className="cards-content">
+              <div className={`${isCardsLoaded && "c-loaded"} cards-content`}>
                 {projectsData.map((project) => (
                   <div
                     id={`card-container${project.id}`}
