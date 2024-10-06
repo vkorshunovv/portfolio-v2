@@ -4,36 +4,13 @@ import Card from "../components/Card";
 import Footer from "../components/Footer";
 import { projectsData } from "../constants/data";
 import { useEffect, useState } from "react";
+import { useStaggeredLoad } from "../hooks/useStaggeredLoad";
 
 const Home = () => {
-  const [isStarsLoaded, setIsStarsLoaded] = useState(false);
-  const [isHeaderLoaded, setIsHeaderLoaded] = useState(false);
-  const [isSubHeaderLoaded, setIsSubHeaderLoaded] = useState(false);
-  const [isCardsLoaded, setIsCardsLoaded] = useState(false);
+  const { isStarsLoaded, isHeaderLoaded, isSubHeaderLoaded, isCardsLoaded } =
+    useStaggeredLoad();
 
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const sId = setTimeout(() => {
-      setIsHeaderLoaded(true);
-    }, 400);
-    const hId = setTimeout(() => {
-      setIsSubHeaderLoaded(true);
-    }, 600);
-    const shId = setTimeout(() => {
-      setIsCardsLoaded(true);
-    }, 700);
-    const cId = setTimeout(() => {
-      setIsStarsLoaded(true);
-    }, 1100);
-
-    return () => {
-      clearTimeout(sId);
-      clearTimeout(hId);
-      clearTimeout(shId);
-      clearTimeout(cId);
-    };
-  }, []);
 
   function handleClick(slug: string) {
     navigate(`/projects/${slug}`);

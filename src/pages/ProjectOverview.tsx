@@ -4,29 +4,11 @@ import { projectsData } from "../constants/data";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import { useState, useEffect } from "react";
+import { useStaggeredLoad } from "../hooks/useStaggeredLoad";
 
 const ProjectOverview = () => {
-  const [isHeaderLoaded, setIsHeaderLoaded] = useState(false);
-  const [isSubHeaderLoaded, setIsSubHeaderLoaded] = useState(false);
-  const [isCardsLoaded, setIsCardsLoaded] = useState(false);
-
-  useEffect(() => {
-    const sId = setTimeout(() => {
-      setIsHeaderLoaded(true);
-    }, 100);
-    const hId = setTimeout(() => {
-      setIsSubHeaderLoaded(true);
-    }, 200);
-    const shId = setTimeout(() => {
-      setIsCardsLoaded(true);
-    }, 300);
-
-    return () => {
-      clearTimeout(sId);
-      clearTimeout(hId);
-      clearTimeout(shId);
-    };
-  }, []);
+  const { isHeaderLoaded, isSubHeaderLoaded, isCardsLoaded } =
+    useStaggeredLoad();
 
   const { slug } = useParams();
 
