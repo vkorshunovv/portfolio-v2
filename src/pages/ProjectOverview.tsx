@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { projectsData } from "../constants/data";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
-import { useState, useEffect } from "react";
 import { useStaggeredLoad } from "../hooks/useStaggeredLoad";
 
 const ProjectOverview = () => {
@@ -19,7 +18,7 @@ const ProjectOverview = () => {
       <div id="canvas-aura" className="canvas-aura aura-wrapper">
         <div className="mask aura-wrapper"></div>
         <div className="canvas-holder aura-wrapper">
-          <canvas width={2000} height={2000} className="canvas" />
+          <div className="canvas"></div>
         </div>
       </div>
       <main className="main">

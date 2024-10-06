@@ -3,7 +3,6 @@ import star from "../assets/star.png";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
 import { projectsData } from "../constants/data";
-import { useEffect, useState } from "react";
 import { useStaggeredLoad } from "../hooks/useStaggeredLoad";
 
 const Home = () => {
@@ -21,7 +20,7 @@ const Home = () => {
         <div id="canvas-aura" className="canvas-aura aura-wrapper">
           <div className="mask aura-wrapper"></div>
           <div className="canvas-holder aura-wrapper">
-            <canvas width={2000} height={2000} className="canvas" />
+            <div className="canvas"></div>
           </div>
         </div>
         <main className="main">

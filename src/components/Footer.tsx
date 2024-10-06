@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="grid footer">
       <div className="fun footer">
         <div className="legal footer">
-          <div className="footer">© 2024 Viktor Korshunov</div>
+          <div className="footer">{`© ${new Date().getFullYear()} Viktor Korshunov`}</div>
           <div className="dot footer">•</div>
           <div className="footer">Spain</div>
         </div>
